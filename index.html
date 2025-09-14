@@ -1,48 +1,149 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>موقع العليمي</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>العليمي - مطور ويب</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Tahoma', sans-serif;
       background-color: #f4f4f4;
+      color: #333;
     }
     header {
-      background-color: #3498db;
+      background: url('https://source.unsplash.com/1600x500/?technology') no-repeat center;
+      background-size: cover;
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 100px 20px;
     }
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 20px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px 10px 0;
+      padding: 12px 24px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #1d6fa5;
+    }
+
     section {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 40px auto;
-      background: white;
       padding: 20px;
+      background-color: white;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
+    section img.profile {
+      width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .portfolio img {
+      width: 100%;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .portfolio div {
+      margin-bottom: 20px;
+    }
+    .portfolio img:hover {
+      transform: scale(1.03);
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       background-color: #333;
       color: white;
+      margin-top: 40px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      color: #3498db;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+    .social a:hover {
+      color: #1d6fa5;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 32px;
+      }
+      .btn {
+        padding: 10px 18px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>موقع العليمي</h1>
-    <p>مرحبًا بكم في موقعي الشخصي</p>
+    <h1>أنا العليمي</h1>
+    <p>مطور ويب ومهتم بالبرمجة وتصميم المواقع</p>
+    <a href="#contact" class="btn">تواصل معي</a>
+    <a href="https://wa.me/966500000000" target="_blank" class="btn">واتساب</a>
+    <a href="cv.pdf" class="btn" download>تحميل السيرة الذاتية</a>
   </header>
+
   <section>
+    <img src="https://i.imgur.com/8Km9tLL.png" alt="صورة العليمي" class="profile" />
     <h2>من أنا؟</h2>
-    <p>هذا الوصف البسيط لي، أتعلم تطوير المواقع وأحب البرمجة.</p>
-    <h2>تواصل معي</h2>
-    <p>البريد الإلكتروني: example@email.com</p>
+    <p>أنا العليمي، شغوف بتطوير الواجهات وتجربة المستخدم، وأسعى لصناعة مواقع احترافية وسريعة. أعمل حاليًا على مشاريع مستقلة وأحب التعلم المستمر في عالم التقنية.</p>
   </section>
+
+  <section class="portfolio">
+    <h2>أعمالي</h2>
+
+    <div>
+      <h3>موقع تعليمي</h3>
+      <img src="https://source.unsplash.com/800x400/?code" alt="موقع تعليمي" />
+    </div>
+
+    <div>
+      <h3>موقع شخصي</h3>
+      <img src="https://source.unsplash.com/800x400/?website" alt="موقع شخصي" />
+    </div>
+
+    <div>
+      <h3>لوحة تحكم</h3>
+      <img src="https://source.unsplash.com/800x400/?dashboard" alt="لوحة تحكم" />
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>تواصل معي</h2>
+    <p>📧 البريد: <a href="mailto:example@email.com">example@email.com</a></p>
+    <div class="social">
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+
   <footer>
-    © 2025 العليمي — جميع الحقوق محفوظة
+    جميع الحقوق محفوظة © العليمي 2025
   </footer>
 </body>
-</html>
+    </html>
