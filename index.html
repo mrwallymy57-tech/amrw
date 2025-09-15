@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="أنا العليمي، مطور ويب شغوف بتصميم الواجهات وتجربة المستخدم. تصفح أعمالي وتواصل معي." />
   <title>العليمي - مطور ويب</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -12,6 +13,7 @@
       font-family: 'Tahoma', sans-serif;
       background-color: #f4f4f4;
       color: #333;
+      transition: background-color 0.3s, color 0.3s;
     }
     header {
       background: url('https://source.unsplash.com/1600x500/?technology') no-repeat center;
@@ -48,6 +50,7 @@
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
     }
 
     section img.profile {
@@ -69,6 +72,39 @@
       transform: scale(1.03);
     }
 
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .skills div {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    input[type="submit"] {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #1d6fa5;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -85,6 +121,24 @@
     }
     .social a:hover {
       color: #1d6fa5;
+    }
+
+    /* الوضع الليلي */
+    body.dark {
+      background-color: #1c1c1c;
+      color: #f0f0f0;
+    }
+    body.dark section {
+      background-color: #2c2c2c;
+    }
+    body.dark footer {
+      background-color: #111;
+    }
+    body.dark .btn {
+      background-color: #555;
+    }
+    body.dark .btn:hover {
+      background-color: #777;
     }
 
     @media (max-width: 768px) {
@@ -105,12 +159,25 @@
     <a href="#contact" class="btn">تواصل معي</a>
     <a href="https://wa.me/966500000000" target="_blank" class="btn">واتساب</a>
     <a href="cv.pdf" class="btn" download>تحميل السيرة الذاتية</a>
+    <button onclick="toggleDarkMode()" class="btn">الوضع الليلي</button>
   </header>
 
   <section>
-    <img src="https://i.imgur.com/8Km9tLL.png" alt="صورة العليمي" class="profile" />
+    <img src="https://i.imgur.com/8Km9tLL.png" alt="صورة شخصية للعليمي" class="profile" />
     <h2>من أنا؟</h2>
     <p>أنا العليمي، شغوف بتطوير الواجهات وتجربة المستخدم، وأسعى لصناعة مواقع احترافية وسريعة. أعمل حاليًا على مشاريع مستقلة وأحب التعلم المستمر في عالم التقنية.</p>
+  </section>
+
+  <section>
+    <h2>مهاراتي</h2>
+    <div class="skills">
+      <div><i class="fab fa-html5"></i> HTML5</div>
+      <div><i class="fab fa-css3-alt"></i> CSS3</div>
+      <div><i class="fab fa-js"></i> JavaScript</div>
+      <div><i class="fab fa-react"></i> React</div>
+      <div><i class="fab fa-git-alt"></i> Git</div>
+      <div><i class="fab fa-node"></i> Node.js</div>
+    </div>
   </section>
 
   <section class="portfolio">
@@ -118,32 +185,47 @@
 
     <div>
       <h3>موقع تعليمي</h3>
-      <img src="https://source.unsplash.com/800x400/?code" alt="موقع تعليمي" />
+      <img src="https://source.unsplash.com/800x400/?code" alt="معاينة لموقع تعليمي من أعمالي" />
     </div>
 
     <div>
       <h3>موقع شخصي</h3>
-      <img src="https://source.unsplash.com/800x400/?website" alt="موقع شخصي" />
+      <img src="https://source.unsplash.com/800x400/?website" alt="معاينة لموقع شخصي من أعمالي" />
     </div>
 
     <div>
       <h3>لوحة تحكم</h3>
-      <img src="https://source.unsplash.com/800x400/?dashboard" alt="لوحة تحكم" />
+      <img src="https://source.unsplash.com/800x400/?dashboard" alt="معاينة للوحة تحكم قمت بتطويرها" />
     </div>
   </section>
 
   <section id="contact">
     <h2>تواصل معي</h2>
-    <p>📧 البريد: <a href="mailto:example@email.com">example@email.com</a></p>
+    <p>📧 البريد الإلكتروني: <a href="mailto:example@email.com">example@email.com</a></p>
+    
+    <!-- نموذج تواصل عبر Formspree -->
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+      <input type="text" name="name" placeholder="الاسم" required />
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required />
+      <textarea name="message" rows="5" placeholder="رسالتك..." required></textarea>
+      <input type="submit" value="إرسال" />
+    </form>
+
     <div class="social">
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com" target="_blank" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+      <a href="https://github.com" target="_blank" aria-label="جيت هب"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com" target="_blank" aria-label="لينكدإن"><i class="fab fa-linkedin"></i></a>
     </div>
   </section>
 
   <footer>
     جميع الحقوق محفوظة © العليمي 2025
   </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
 </body>
-    </html>
+  </html>
